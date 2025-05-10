@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="layout :: layout">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<h2>Listado de Clínicas</h2>
+<a th:href="@{/clinic/nuevo}">Nueva Clínica</a>
+<table>
+    <thead>
+    <tr>
+        <th>Nombre</th>
+        <th>Dirección</th>
+        <th>Teléfono</th>
+        <th>Acciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="clinica : ${listaClinicas}">
+        <td th:text="${clinic.name}"></td>
+        <td th:text="${clinic.address}"></td>
+        <td th:text="${clinic.phoneNumber}"></td>
+        <td>
+            <a th:href="@{/clinic/editar/{id}(id=${clinic.id})}">Editar</a>
+            <a th:href="@{/clinic/eliminar/{id}(id=${clinica.id})}" onclick="return confirm('¿Eliminar?')">Eliminar</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
