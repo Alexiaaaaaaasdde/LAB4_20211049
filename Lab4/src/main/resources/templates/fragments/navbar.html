@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<head>
+    <meta charset="UTF-8">
+</head>
+<div th:fragment="navbar">
+    <nav>
+        <ul>
+            <li><a th:href="@{/clinicas}">Clínicas</a></li>
+            <li><a th:href="@{/doctores}">Doctores</a></li>
+        </ul>
+    </nav>
+</div>
+</body>
+</html>
